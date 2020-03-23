@@ -102,8 +102,14 @@ String keywords = ParamUtil.getString(request, "keywords");
 						cssClass="table-cell-expand"
 						href="<%= editChannelURL %>"
 						name="available-properties"
-						value="<%= HtmlUtil.escape(channel.getName()) %>"
-					/>
+						truncate="<%= true %>"
+					>
+						<span class="lfr-portal-tooltip text-truncate-inline" title="<%= HtmlUtil.escape(channel.getName()) %>">
+							<span class="text-truncate">
+								<%= HtmlUtil.escape(channel.getName()) %>
+							</span>
+						</span>
+					</liferay-ui:search-container-column-text>
 				</liferay-ui:search-container-row>
 
 				<liferay-ui:search-iterator
